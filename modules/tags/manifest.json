@@ -1,0 +1,15 @@
+{
+  "id": "tags",
+  "version": "0.1.0",
+  "status": "ready",
+  "description": "CollectionService tag binder.",
+  "depends": [
+    "core"
+  ],
+  "files": [
+    {
+      "from": "files/server",
+      "to": "src/server"
+    }
+  ]
+}

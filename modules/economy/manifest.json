@@ -1,0 +1,15 @@
+{
+  "id": "economy",
+  "version": "0.1.0",
+  "status": "ready",
+  "description": "Server-authoritative currency operations.",
+  "depends": [
+    "player-data"
+  ],
+  "files": [
+    {
+      "from": "files/server",
+      "to": "src/server"
+    }
+  ]
+}

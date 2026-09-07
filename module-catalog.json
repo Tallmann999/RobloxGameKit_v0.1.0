@@ -1,0 +1,190 @@
+{
+  "kitVersion": "0.1.0",
+  "modules": [
+    {
+      "id": "analytics",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Analytics wrapper",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "anti-exploit",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Security hardening",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "audio",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Audio routing",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "core",
+      "version": "0.1.0",
+      "status": "ready",
+      "description": "Bootstrap lifecycle, config and logging.",
+      "depends": [],
+      "files": [
+        {
+          "from": "files/shared",
+          "to": "src/shared"
+        },
+        {
+          "from": "files/server",
+          "to": "src/server"
+        },
+        {
+          "from": "files/client",
+          "to": "src/client"
+        }
+      ]
+    },
+    {
+      "id": "daily-rewards",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Daily rewards",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "economy",
+      "version": "0.1.0",
+      "status": "ready",
+      "description": "Server-authoritative currency operations.",
+      "depends": [
+        "player-data"
+      ],
+      "files": [
+        {
+          "from": "files/server",
+          "to": "src/server"
+        }
+      ]
+    },
+    {
+      "id": "interaction",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "World interaction framework",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "inventory",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Inventory",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "localization",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Localization",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "monetization",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Monetization",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "network",
+      "version": "0.1.0",
+      "status": "ready",
+      "description": "Central network endpoint registry.",
+      "depends": [
+        "core"
+      ],
+      "files": [
+        {
+          "from": "files/shared",
+          "to": "src/shared"
+        },
+        {
+          "from": "files/server",
+          "to": "src/server"
+        }
+      ]
+    },
+    {
+      "id": "player-data",
+      "version": "0.1.0",
+      "status": "ready",
+      "description": "Optional server-side player profiles and DataStore persistence.",
+      "depends": [
+        "core"
+      ],
+      "files": [
+        {
+          "from": "files/shared",
+          "to": "src/shared"
+        },
+        {
+          "from": "files/server",
+          "to": "src/server"
+        }
+      ]
+    },
+    {
+      "id": "progression",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Progression",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "settings",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Player settings",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "tags",
+      "version": "0.1.0",
+      "status": "ready",
+      "description": "CollectionService tag binder.",
+      "depends": [
+        "core"
+      ],
+      "files": [
+        {
+          "from": "files/server",
+          "to": "src/server"
+        }
+      ]
+    },
+    {
+      "id": "teleports",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "Places/teleports",
+      "depends": [],
+      "files": []
+    },
+    {
+      "id": "ui",
+      "version": "0.1.0",
+      "status": "blueprint",
+      "description": "UI navigation/HUD",
+      "depends": [],
+      "files": []
+    }
+  ]
+}

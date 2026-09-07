@@ -1,0 +1,8 @@
+{
+  "id": "daily-rewards",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "description": "Daily rewards",
+  "depends": [],
+  "files": []
+}

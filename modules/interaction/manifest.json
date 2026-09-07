@@ -1,0 +1,8 @@
+{
+  "id": "interaction",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "description": "World interaction framework",
+  "depends": [],
+  "files": []
+}

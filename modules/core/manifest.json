@@ -1,0 +1,21 @@
+{
+  "id": "core",
+  "version": "0.1.0",
+  "status": "ready",
+  "description": "Bootstrap lifecycle, config and logging.",
+  "depends": [],
+  "files": [
+    {
+      "from": "files/shared",
+      "to": "src/shared"
+    },
+    {
+      "from": "files/server",
+      "to": "src/server"
+    },
+    {
+      "from": "files/client",
+      "to": "src/client"
+    }
+  ]
+}

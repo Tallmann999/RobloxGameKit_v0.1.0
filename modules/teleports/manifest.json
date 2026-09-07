@@ -1,0 +1,8 @@
+{
+  "id": "teleports",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "description": "Places/teleports",
+  "depends": [],
+  "files": []
+}

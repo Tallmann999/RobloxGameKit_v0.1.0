@@ -1,0 +1,8 @@
+{
+  "id": "inventory",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "description": "Inventory",
+  "depends": [],
+  "files": []
+}

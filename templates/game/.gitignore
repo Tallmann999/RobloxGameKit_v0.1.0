@@ -1,0 +1,8 @@
+Packages/
+DevPackages/
+*.log
+.rojo-cache/
+.DS_Store
+Thumbs.db
+place/*.rbxl.lock
+place/*.rbxlx.lock

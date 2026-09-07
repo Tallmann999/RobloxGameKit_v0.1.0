@@ -1,0 +1,8 @@
+{
+  "id": "analytics",
+  "version": "0.1.0",
+  "status": "blueprint",
+  "description": "Analytics wrapper",
+  "depends": [],
+  "files": []
+}

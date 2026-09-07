@@ -1,0 +1,19 @@
+{
+  "id": "network",
+  "version": "0.1.0",
+  "status": "ready",
+  "description": "Central network endpoint registry.",
+  "depends": [
+    "core"
+  ],
+  "files": [
+    {
+      "from": "files/shared",
+      "to": "src/shared"
+    },
+    {
+      "from": "files/server",
+      "to": "src/server"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Roblox place backups / local world snapshots
+place/*.rbxl.lock
+place/*.rbxlx.lock
+
+# Generated / local
+Packages/
+DevPackages/
+*.log
+.rojo-cache/
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/settings.local.json
+.idea/
