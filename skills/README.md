@@ -1,29 +1,74 @@
-# Roblox voice idea → local MVP: two Codex skills
+# Два скилла Codex для Roblox: от идеи голосом до готовой игры
 
-Source kit: https://github.com/Tallmann999/RobloxGameKit_v0.1.0
-Original GD author: https://github.com/VKSpaz/gd-doc-kickoff
+Этот комплект добавляется к [RobloxGameKit](https://github.com/Tallmann999/RobloxGameKit_v0.1.0). Он позволяет вести **одну и ту же игру** через этапы: идея → концепт → Feature Index → локальный MVP → серверные системы → мультиплеер → тесты → подготовка релиза.
 
-The original gd-doc-kickoff interviews about **one selected feature only**. It does NOT create a game concept or feature index. Our separate gd-roblox-kickoff adds those tasks and creates an MVP handoff; roblox-mvp-builder uses the handoff to create a minimal vertical slice.
+## Какие скиллы
 
-## Install in Windows PowerShell
+| Скилл | Что делает |
+|---|---|
+| `$gd-roblox-kickoff` | Обсуждает идею обычными словами, записывает концепт, индекс фичей и подробные правила главной механики для MVP |
+| `$roblox-mvp-builder` | Работает как Roblox-разработчик: код Luau, связь с Studio через MCP и Rojo, локальный MVP, а после проверки — дальнейшие P1-фичи и серверные системы |
 
-Clone or download **this branch** of RobloxGameKit, open PowerShell in that folder, then execute:
+Первый скилл использует подход [VKSpaz/gd-doc-kickoff](https://github.com/VKSpaz/gd-doc-kickoff). Оригинальный скилл работает с **одной конкретной фичей**, поэтому этот новый вариант добавляет создание концепта целой игры и Feature Index. Оригинал не изменяется.
 
-    powershell -ExecutionPolicy Bypass -File .\scripts\install_voice_mvp_skills.ps1
+## Установка на Windows
 
-Installer copies both new skills to %USERPROFILE%\.agents\skills. If Git is available, it **clones the entire original gd-doc-kickoff skill** separately and copies its three interview references into gd-roblox-kickoff/references/upstream. Existing skills are backed up. It does not modify the original upstream GitHub repository or install Rojo/Studio/MCP.
+Сначала скачай/обнови RobloxGameKit, затем в PowerShell из корня проекта выполни:
 
-Restart Codex and open an empty folder for a new game.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install_voice_mvp_skills.ps1
+```
 
-## One voice request
+Установщик положит оба новых навыка в папку `C:\Users\<имя>\.agents\skills\`. При доступном Git он также скачает **оригинальный** `gd-doc-kickoff` и скопирует справочные материалы интервью в новый GDD-скилл. Если такие скиллы уже есть, будут созданы резервные копии.
 
-    $gd-roblox-kickoff У меня идея новой игры Roblox. Запиши концепт, индекс фичей и документ основной фичи. Выбери самое маленькое MVP. Потом используй $roblox-mvp-builder: подготовь RobloxGameKit, подключи локальную Roblox Studio через MCP и Rojo, собери прототип, проверь Play, сохрани локальный .rbxl. Без публичной публикации.
+Перезапусти Codex. Установка скиллов **не устанавливает Roblox Studio, Rojo, Rokit или MCP** — они настраиваются отдельно.
 
-If Codex cannot use a named skill automatically, invoke the two skills one after another. Voice dictation requires a supported voice input feature of the particular Codex client or speech-to-text; the skill does not enable microphones by itself.
+## Шаг 1. Продиктуй идею
 
-## Evidence
+Создай и открой в Codex пустую папку игры. Затем произнеси или вставь:
 
-The first skill creates docs/project-concept.md, docs/feature-index.md, docs/features/F-001_core-loop_gd-spec.md, docs/mvp-handoff.md.
-The second skill reads these docs and produces docs/technical-plan.md, docs/mvp-checklist.md, src/, plus a local place snapshot after an actual Studio test.
+```text
+$gd-roblox-kickoff
+У меня новая идея Roblox-игры. Я расскажу её голосом.
+Запиши концепт, Feature Index и правила главной механики.
+Выдели маленький MVP, который можно проверить локально.
+```
 
-Studio visual world remains outside of Rojo-controlled code mapping. Studio MCP access and Play test are external dependencies, not promised by a Markdown skill. Do not hand out .rbxl to third parties if server source must remain private.
+Результат: `docs/project-concept.md`, `docs/feature-index.md`, `docs/features/..._gd-spec.md`, `docs/mvp-handoff.md`.
+
+## Шаг 2. Сделай MVP в Roblox Studio
+
+В той же папке:
+
+```text
+$roblox-mvp-builder
+Прочитай наши документы. Собери минимальный рабочий прототип
+через RobloxGameKit, Rojo и Roblox Studio MCP. Создай простую
+сцену, запусти Play Test, прочитай Output, исправь ошибки
+и сохрани локальный .rbxl. Ничего не публикуй.
+```
+
+При работающем MCP Codex сможет работать с DataModel и проверять игру. Если нужна настройка программы или вход в аккаунт, он должен дать конкретные шаги. Голосовой ввод зависит от используемой версии Codex; сам скилл микрофон не включает.
+
+## Шаг 3. MVP понравился — продолжай ту же игру
+
+```text
+$roblox-mvp-builder
+MVP проверен и понравился. Продолжаем этот же проект.
+Прочитай Feature Index и docs/development-state.md.
+Подготовь следующий P1-этап: нужные серверные системы,
+сохранения, инвентарь, лобби, мультиплеер и тестирование.
+Не добавляй всё сразу: реализуй и проверь следующую фичу.
+```
+
+Скилл не должен пересоздавать мир. После каждой фичи он обязан зафиксировать реальные тесты и состояние разработки. Дальше можно поручать подготовку к публикации, но сама публикация только по явной команде пользователя.
+
+## Ограничения и безопасность
+
+- GameKit v0.1.0 содержит лишь пять реализованных заготовок: `core`, `network`, `tags`, `economy`, `player-data`. Остальные модули пока описаны в `BLUEPRINT.md` и должны быть реализованы для игры отдельно.
+- `.rbxl` удобно отправлять для редактирования и проверки в Studio, но он раскрывает исходники; для теста с друзьями без передачи кода лучше закрытый Roblox Experience.
+- Локальный MVP работает в Roblox Studio, это не автономный Windows `.exe`.
+- Сохранения, телепорты, монетизация, полноценный multiplayer и безопасность требуют отдельных проверок, в некоторых случаях — приватно опубликованного тестового Experience.
+- Нельзя помечать фичу протестированной, если настоящего Play Test не было.
+
+Подробная инструкция для новичка находится в [основном README](../README.md) и [START_HERE_RU.md](../docs/START_HERE_RU.md).
