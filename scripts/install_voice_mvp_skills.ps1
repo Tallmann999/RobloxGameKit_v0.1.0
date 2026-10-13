@@ -28,4 +28,4 @@ if (Get-Command git -ErrorAction SilentlyContinue) {
     Write-Host "Original GD interview reference texts installed."
   }
 } else { Write-Warning "Git missing: original GD skill not copied; Roblox skills still installed." }
-Write-Host "Restart Codex, then invoke $gd-roblox-kickoff followed by $roblox-mvp-builder."
+Write-Host 'Restart Codex, then invoke $gd-roblox-kickoff followed by $roblox-mvp-builder.'
