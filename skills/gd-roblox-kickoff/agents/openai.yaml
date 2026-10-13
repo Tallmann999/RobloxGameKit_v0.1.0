@@ -1,0 +1,6 @@
+interface:
+  display_name: "Roblox GDD Kickoff"
+  short_description: "От голосовой идеи до концепта и Feature Index для Roblox"
+  default_prompt: "Используй $gd-roblox-kickoff: запиши мою идею Roblox-игры, уточни важные правила и подготовь концепт, индекс фичей и небольшой MVP-handoff."
+policy:
+  allow_implicit_invocation: true
